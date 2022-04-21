@@ -1,21 +1,38 @@
 <!-- In order to pitch a capstone project idea, you must have at least:
 4 wireframes:
-User Stories:
-ERD:
-tech stack:
+User Stories: Done
+ERD:Done
+tech stack: Done
 third party API if applicable
  -->
 
 # composting-mgmt-systems
 Web App to Manage Composting Bins, Pickups and Quality Control
 
+&nbsp;
+
+## Tech Stack
+---
+**Front-end**
+ - Express
+ - React
+ - Node
+ - Bootsrap
+
+**Back-end**
+ - Django
+
+&nbsp;
+
 ## User Stories
+---
 **1. Customer**
-    - Create
+
+    - CREATE
         1. Pickup Address
         2. Bin Order
 
-     - Read 
+     - READ 
         1. Pickup Address
              - bins
              - Pickup Route
@@ -23,21 +40,22 @@ Web App to Manage Composting Bins, Pickups and Quality Control
         3. Bin Check
         4. Fines
 
-     - Update
+     - UPDATE
         1. Pickup Address
              - status
 
 **2. Driver**
 
-    - Read
+    - READ
         1. route(s)
             -address(es)
 
 **3. Support (Dispatch)**
-    - Create
+
+    - CREATE
         1. Pickup Route
     
-    - Read
+    - READ
         1. Customer
             - pickup address(es)
                 - bins
@@ -46,7 +64,7 @@ Web App to Manage Composting Bins, Pickups and Quality Control
                 - bins
             - drivers
     
-     - Update
+     - UPDATE
          1. Customer
             - pickup address(es)
                 - bins
@@ -57,18 +75,18 @@ Web App to Manage Composting Bins, Pickups and Quality Control
 
 **4. Officer**
 
-    - Create
+    - CREATE
         1. Bin Check
         2. Fine
-    - Read
+    - READ
         1. Bin
             -Bin Checks
         2. Customer
             -Bin Checks
-    - Update
+    - UPDATE
         1. Bin Check
         2. Fine
-    - Delete
+    - DELETE
         1. Fine
 
 

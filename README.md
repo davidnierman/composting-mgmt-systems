@@ -26,6 +26,12 @@ Web App to Manage Composting Bins, Pickups and Quality Control
 
 ## User Stories
 ---
+
+ - There will be 4 types of users with different permisions/views when accessing the app. All of the users will be able to sign in / sign-out.
+ - A new member to the site will have access to create a new customer user.
+    - All other user types will be created by Support Admin.
+
+
 **1. Customer**
 
     - CREATE
@@ -34,11 +40,11 @@ Web App to Manage Composting Bins, Pickups and Quality Control
 
      - READ 
         1. Pickup Address
-             - bins
-             - Pickup Route
-        2. Bin Order
-        3. Bin Check
-        4. Fines
+             - bins(s)
+             - Pickup Route(s)
+        2. Bin Order(s)
+        3. Bin Check(s)
+        4. Fines(s)
 
      - UPDATE
         1. Pickup Address
@@ -50,27 +56,30 @@ Web App to Manage Composting Bins, Pickups and Quality Control
         1. route(s)
             -address(es)
 
-**3. Support (Dispatch)**
+**3. Support Admin (Dispatch)**
 
     - CREATE
         1. Pickup Route
+        2. User (driver)
+        3. User (Officer)
+        4. User (Support Admin)
     
     - READ
-        1. Customer
+        1. Customer(s)
             - pickup address(es)
-                - bins
+                - bin(s)
         2. Pickup Routes
             - pickup address(es)
-                - bins
+                - bin(s)
             - drivers
     
      - UPDATE
          1. Customer
-            - pickup address(es)
-                - bins
+            - pickup address
+                - bin
         2. Pickup Routes
-            - pickup address(es)
-                - bins
+            - pickup address
+                - bin
             - drivers
 
 **4. Officer**
@@ -80,9 +89,10 @@ Web App to Manage Composting Bins, Pickups and Quality Control
         2. Fine
     - READ
         1. Bin
-            -Bin Checks
+            -Bin Check(s)
         2. Customer
-            -Bin Checks
+            -Bin Checks(s)
+            -Fine(s)
     - UPDATE
         1. Bin Check
         2. Fine

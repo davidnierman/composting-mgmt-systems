@@ -56,7 +56,24 @@ Web App to Manage Composting Bins, Pickups and Quality Control
         1. route(s)
             -address(es)
 
-**3. Support Admin (Dispatch)**
+**4. Officer**
+
+    - CREATE
+        1. Bin Check
+        2. Fine
+    - READ
+        1. Bin
+            -Bin Check(s)
+        2. Customer
+            -Bin Checks(s)
+            -Fine(s)
+    - UPDATE
+        1. Bin Check
+        2. Fine
+    - DELETE
+        1. Fine
+
+**4. Support Admin (Dispatch)**
 
     - CREATE
         1. Pickup Route
@@ -82,25 +99,18 @@ Web App to Manage Composting Bins, Pickups and Quality Control
                 - bin
             - drivers
 
-**4. Officer**
-
-    - CREATE
-        1. Bin Check
-        2. Fine
-    - READ
-        1. Bin
-            -Bin Check(s)
-        2. Customer
-            -Bin Checks(s)
-            -Fine(s)
-    - UPDATE
-        1. Bin Check
-        2. Fine
-    - DELETE
-        1. Fine
 
 
-
+## Wireframes
+---
+- [Customer]()
+     - [Nav]()
+- [Driver]()
+     - [Nav]()
+- [Officer]()
+     - [Nav]()
+- [Support]()
+     - [Nav]()
 
 
             

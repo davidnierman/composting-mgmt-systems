@@ -1,5 +1,5 @@
 <!-- In order to pitch a capstone project idea, you must have at least:
-4 wireframes:
+4 wireframes: Done
 User Stories: Done
 ERD:Done
 tech stack: Done

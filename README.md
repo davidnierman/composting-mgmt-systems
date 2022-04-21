@@ -7,7 +7,7 @@ third party API if applicable
  -->
 
 # composting-mgmt-systems
-Web App to Manage Composting Bins, Pickups and Quality Control
+Web App to Manage Composting Bins, Pickups and Ticketing
 
 &nbsp;
 

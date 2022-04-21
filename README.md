@@ -73,7 +73,7 @@ Web App to Manage Composting Bins, Pickups and Quality Control
     - DELETE
         1. Fine
 
-**4. Support Admin (Dispatch)**
+**4. Support **
 
     - CREATE
         1. Pickup Route
@@ -103,14 +103,14 @@ Web App to Manage Composting Bins, Pickups and Quality Control
 
 ## Wireframes
 ---
-- [Customer]()
-     - [Nav]()
-- [Driver]()
-     - [Nav]()
-- [Officer]()
-     - [Nav]()
-- [Support]()
-     - [Nav]()
+- [Customer](https://github.com/dnierman0920/composting-mgmt-systems/tree/main/planning/Wireframes/Customer)
+     - [Nav](https://github.com/dnierman0920/composting-mgmt-systems/blob/main/planning/Wireframes/Customer/Navigation.jpg)
+- [Driver](https://github.com/dnierman0920/composting-mgmt-systems/tree/main/planning/Wireframes/Driver)
+     - [Nav](https://github.com/dnierman0920/composting-mgmt-systems/blob/main/planning/Wireframes/Driver/Navigation.jpg)
+- [Officer](https://github.com/dnierman0920/composting-mgmt-systems/tree/main/planning/Wireframes/Officer)
+     - [Nav](https://github.com/dnierman0920/composting-mgmt-systems/blob/main/planning/Wireframes/Officer/Navigation.jpg)
+- [Support](https://github.com/dnierman0920/composting-mgmt-systems/tree/main/planning/Wireframes/Support)
+     - [Nav](https://github.com/dnierman0920/composting-mgmt-systems/blob/main/planning/Wireframes/Support/Navigation.jpg)
 
 
             

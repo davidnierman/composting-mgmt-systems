@@ -68,6 +68,8 @@ Web App to Manage Composting Bins, Pickups and Quality Control
     - Update
         1. Bin Check
         2. Fine
+    - Delete
+        1. Fine
 
 
 

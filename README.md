@@ -2,8 +2,7 @@
 4 wireframes: Done
 User Stories: Done
 ERD:Done
-tech stack: Done
-third party API if applicable
+tech stack: Donethird party API if applicable
  -->
 
 # composting-mgmt-systems
@@ -76,10 +75,11 @@ Web App to Manage Composting Bins, Pickups and Ticketing
 **4. Support **
 
     - CREATE
-        1. Pickup Route
-        2. User (driver)
-        3. User (Officer)
-        4. User (Support Admin)
+        1. Create bin
+        2. Pickup Route
+        3. User (driver)
+        4. User (Officer)
+        5. User (Support Admin)
     
     - READ
         1. Customer(s)
@@ -114,6 +114,13 @@ Web App to Manage Composting Bins, Pickups and Ticketing
 
 
             
+### MVP
+---
 
+Complete User Stories Listed above for Customer and Admin
+
+### Stretch Goals
+
+Complete User Stories Listed above for Driver and Officer
 
 

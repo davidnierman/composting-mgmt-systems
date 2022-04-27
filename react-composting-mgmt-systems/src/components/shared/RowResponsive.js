@@ -6,16 +6,15 @@ const RowResponsive = (props) => {
 
     // map all the rows into a table row
     const row = rowsData.map((row) =>
-        <TableDataResponsive row={row} />
+        <tr>
+            <TableDataResponsive row={row} />
+        </tr>
     );
 
 
     return(
         <> 
-            <tr>
-                {row}
-            </tr>      
-
+            {row}
         </>
     )
 

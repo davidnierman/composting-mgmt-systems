@@ -31,10 +31,7 @@ const LocationIndex = (props) => {
     // return the locations
     // link to render multiple objects in a list: https://reactjs.org/docs/lists-and-keys.html
     console.log("LOCATIONS USED FOR MAPPING: ", locations.locations)
-    const locationItems = locations.map((location) =>
-        <li>{location.street}</li>
-);
-    
+ 
     return (
         <>
             <h1>Locations</h1>

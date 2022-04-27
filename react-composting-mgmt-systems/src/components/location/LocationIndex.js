@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { index } from '../../api/location'
+import TableResponsive from '../shared/TableResponsive'
 
 const LocationIndex = (props) => {
     // pull the user from the props
@@ -19,7 +20,7 @@ const LocationIndex = (props) => {
         .catch((error) => {
             console.log("ERROR: ", error)
         })
-    },[locations])
+    },[])
 
     if (!locations) {
         return <p>loading...</p>
@@ -36,8 +37,11 @@ const LocationIndex = (props) => {
     
     return (
         <>
-            <h1>LOCATION JSON RESPONSE?</h1>
+            <h1>LOCATION Items</h1>
             <ul>{locationItems}</ul>
+            <TableResponsive
+                arrayOfObjects={locations}
+            />
         </>
 
         )

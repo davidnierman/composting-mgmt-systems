@@ -13,6 +13,7 @@ import SignIn from './components/auth/SignIn'
 import SignOut from './components/auth/SignOut'
 import ChangePassword from './components/auth/ChangePassword'
 import LocationIndex from './components/location/LocationIndex'
+import ShowLocation from './components/location/ShowLocation'
 
 const App = () => {
 
@@ -74,6 +75,13 @@ const App = () => {
             element={
               <RequireAuth user={user}>
                 <LocationIndex msgAlert={msgAlert} user={user} />
+              </RequireAuth>}
+          />
+		<Route
+            path='/locations/:id'
+            element={
+              <RequireAuth user={user}>
+                <ShowLocation msgAlert={msgAlert} user={user} />
               </RequireAuth>}
           />
 				</Routes>

@@ -37,8 +37,7 @@ const LocationIndex = (props) => {
     
     return (
         <>
-            <h1>LOCATION Items</h1>
-            <ul>{locationItems}</ul>
+            <h1>Locations</h1>
             <TableResponsive
                 arrayOfObjects={locations}
             />

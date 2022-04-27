@@ -40,6 +40,9 @@ const ChangePassword = (props) => {
 			)
 			.then(() => navigate('/'))
 			.catch((error) => {
+                console.log("PASSWORDS: ", passwords)
+                console.log("USER", user)
+                console.log("ERROR: ", error)
 				setOldPassword('')
                 setNewPassword('')
 				msgAlert({

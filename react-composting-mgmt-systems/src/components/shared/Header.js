@@ -14,6 +14,9 @@ const authenticatedOptions = (
 		<Nav.Link>
 			<Link to='sign-out/' style={linkStyle}> Sign Out</Link>
 		</Nav.Link>
+		<Nav.Link>
+			<Link to='locations/' style={linkStyle}> Location Index</Link>
+		</Nav.Link>
 	</>
 )
 

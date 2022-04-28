@@ -10,10 +10,10 @@ const CreateLocationModal = (props) => {
   const navigate = useNavigate();
   // we'll need two states
   const [location, setLocation] = useState({
-    'street': '',
-    'city': '',
-    'state': '',
-    'zip_code': '',
+    'street': ' ',
+    'city': ' ',
+    'state': ' ',
+    'zip_code': ' ',
     'property_type': 'RESIDENTIAL',
     'user': user.id,
     });

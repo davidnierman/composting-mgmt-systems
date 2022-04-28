@@ -1,23 +1,25 @@
 // import React, { useState } from 'react';
 import { Form, Container, Button } from 'react-bootstrap';
+import Input from './Input';
 
 const LocationForm = (props) => {
-  const { location, handleChange, handleSubmit, heading } = props;
+    const { location, handleChange, handleSubmit, heading } = props;
 
-  console.log('LOCATION: ', location)
+    console.log('LOCATION KEYs: ', Object.keys(location))
+    // create an array of keys that will be iterated over and pushed into the form's elements
+    const objectKeys = Object.keys(location)
 
-  // COME BACK TO THIS AND MAKE ALL THE FORM CONTROL ELEMENTS VARIABLES SO IT CAN ADJUST BASED ON THE MODEL/OBJECT BEING CREATED/EDITED!
+    const inputs = objectKeys.map((input) =>
+    <>
+        <Input location={location} input={input} handleChange={handleChange} />
+    </>      
+    );
+
   return (
     <Container className="justify-content-center">
       <h3>{heading}</h3>
       <Form onSubmit={handleSubmit}>
-        <Form.Label>street</Form.Label>
-        <Form.Control
-          placeholder="street address"
-          value={location.street}
-          name="street"
-          onChange={handleChange}
-        />
+            {inputs}
         <Button type="submit">Submit</Button>
       </Form>
     </Container>

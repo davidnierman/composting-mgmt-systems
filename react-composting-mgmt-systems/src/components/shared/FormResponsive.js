@@ -2,16 +2,19 @@
 import { Form, Container, Button } from 'react-bootstrap';
 import Input from './Input';
 
-const LocationForm = (props) => {
-    const { location, handleChange, handleSubmit, heading } = props;
+const FormResponsive = (props) => {
 
-    console.log('LOCATION KEYs: ', Object.keys(location))
+    console.log('PROPS: ', props)
+    const { objectToCreateOrEdit, handleChange, handleSubmit, heading } = props;
+
+    console.log('objectToCreateOrEdit', objectToCreateOrEdit)
+    // console.log('LOCATION KEYs: ', Object.keys(objectToCreateOrEdit))
     // create an array of keys that will be iterated over and pushed into the form's elements
-    const objectKeys = Object.keys(location)
+    const objectKeys = Object.keys(objectToCreateOrEdit)
 
     const inputs = objectKeys.map((input) =>
     <>
-        <Input location={location} input={input} handleChange={handleChange} />
+        <Input objectToCreateOrEdit={objectToCreateOrEdit} input={input} handleChange={handleChange} />
     </>      
     );
 
@@ -26,4 +29,4 @@ const LocationForm = (props) => {
   );
 };
 
-export default LocationForm;
+export default FormResponsive;

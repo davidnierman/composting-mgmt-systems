@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import LocationForm from '../shared/LocationForm';
+import FormResponsive from '../shared/FormResponsive';
 import { Modal } from 'react-bootstrap';
 import { create } from '../../api/location';
 
@@ -64,8 +64,8 @@ const CreateLocationModal = (props) => {
     <Modal show={show} onHide={handleClose}>
       <Modal.Header closeButton></Modal.Header>
       <Modal.Body>
-        <LocationForm
-        location={location}
+        <FormResponsive
+        objectToCreateOrEdit={location}
         handleChange={handleChange}
         handleSubmit={handleSubmit}
         heading="Add new location"

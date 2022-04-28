@@ -23,12 +23,14 @@ export const show = (user, id) => {
 }
 
 export const create = (user, location) => {
+	const body = {"location": location}
+	console.log('this is the body: ', body)
 	return axios({
 		method: 'POST',
 		url: apiUrl + '/locations/',
 		headers: {
 			Authorization: `Token ${user.token}`,
 		},
-		body: {location}
+		data: body
 	})
 }

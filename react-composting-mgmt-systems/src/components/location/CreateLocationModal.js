@@ -14,7 +14,7 @@ const CreateLocationModal = (props) => {
     'city': '',
     'state': '',
     'zip_code': '',
-    'property_type': '',
+    'property_type': 'RESIDENTIAL',
     'user': user.id,
     });
 
@@ -36,6 +36,7 @@ const CreateLocationModal = (props) => {
     // e === event
     e.preventDefault(); // The preventDefault() method of the Event interface tells the user agent that if the event does not get explicitly handled, its default action should not be taken as it normally would be.
 
+    console.log('CREATING A CREATE REQUEST NOW!')
     create(user, location)
       // if create is successful, we should navigate to the show page
       .then((res) => {

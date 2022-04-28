@@ -41,7 +41,6 @@ const ShowLocation = (props) => {
             <p>{location.street}</p>
             <p>{location.city} {location.state}, {location.zip_code}</p>
 
-
         </>
 
         )

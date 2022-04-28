@@ -21,3 +21,14 @@ export const show = (user, id) => {
 		},
 	})
 }
+
+export const create = (user, location) => {
+	return axios({
+		method: 'POST',
+		url: apiUrl + '/locations/',
+		headers: {
+			Authorization: `Token ${user.token}`,
+		},
+		body: {location}
+	})
+}

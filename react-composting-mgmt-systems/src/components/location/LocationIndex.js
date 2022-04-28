@@ -1,13 +1,17 @@
 import React, { useState, useEffect } from 'react'
 import { index } from '../../api/location'
 import TableResponsive from '../shared/TableResponsive'
+import { Button } from 'react-bootstrap'
+import CreateLocationModal from './CreateLocationModal'
 
 const LocationIndex = (props) => {
     // pull the user from the props
-    const {user} = props
+    const {user, msgAlert} = props
     
     // create a hook for the locations variable
     const [locations, setLocations] = useState(null)
+    //create a hook to change if the create Modal displays
+    const [modalOpen, setModalOpen] = useState(false);
 
     useEffect(()=> {
         // use the axios call to pull index info of all locations
@@ -35,11 +39,23 @@ const LocationIndex = (props) => {
     return (
         <>
             <h1>Locations</h1>
+        
+            <Button variant="warning" onClick={() => setModalOpen(true)}>
+                Create Location
+            </Button>
+
             <TableResponsive
                 arrayOfObjects={locations}
             />
-        </>
 
+            <CreateLocationModal 
+                user={user}
+                show={modalOpen}
+                handleClose={() => setModalOpen(false)}
+                msgAlert={msgAlert}
+                // triggerRefresh={triggerRefresh}
+            />
+        </>
         )
 }
 

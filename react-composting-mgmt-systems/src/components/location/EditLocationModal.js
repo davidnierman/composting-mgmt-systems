@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import FormResponsive from '../shared/FormResponsive';
 import { Modal } from 'react-bootstrap';
 import { edit, show } from '../../api/location';
@@ -9,7 +8,6 @@ import { useEffect } from 'react';
 
 const EditLocationModal = (props) => {
     const { user, showModal, handleClose, msgAlert, triggerRefresh, setModalOpen} = props
-    const navigate = useNavigate();
 
     // state of location is needed to fill in with original values and to edit and submit new values
     const [location, setLocation] = useState(null)
@@ -59,7 +57,6 @@ const EditLocationModal = (props) => {
       // if edit is successful, we should navigate to the show page
       .then((res) => {
         console.log('RES: ', res)
-  
       })
       // then we send a success message
       .then(() =>
@@ -81,8 +78,6 @@ const EditLocationModal = (props) => {
           message: 'something went wrong, this location could not be updated',
           variant: 'danger',
         })
-        triggerRefresh() // THIS SHOULD NOT BE HERE, I PUT IT HERE JUST TO TEST OUT UNTIL I RESOLVE HOW TO MAKE 204 NOT CATCHEABLE/ERROR
-        setModalOpen() // THIS SHOULD NOT BE HERE, I PUT IT HERE JUST TO TEST OUT UNTIL I RESOLVE HOW TO MAKE 204 NOT CATCHEABLE/ERROR
       }
       );
   };
@@ -95,7 +90,7 @@ const EditLocationModal = (props) => {
         objectToCreateOrEdit={location}
         handleChange={handleChange}
         handleSubmit={handleSubmit}
-        heading="Add new location"
+        heading="Edit Location"
         />
       </Modal.Body>
     </Modal>

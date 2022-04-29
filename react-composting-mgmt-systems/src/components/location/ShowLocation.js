@@ -3,6 +3,7 @@ import { show } from '../../api/location'
 import { Button } from 'react-bootstrap'
 import { useParams } from 'react-router-dom';
 import EditLocationModal from './EditLocationModal';
+import DeleteLocationModal from './DeleteLocationModal'
 
 const ShowLocation = (props) => {
     // pull the user from the props
@@ -13,8 +14,11 @@ const ShowLocation = (props) => {
     // create a hook for the locations variable
     const [location, setLocation] = useState(null)
 
-    //create a hook to change if the create Modal displays
+    //create a hook to change if the Edit Modal displays
     const [modalOpen, setModalOpen] = useState(false);
+
+    // create a hook to change if the Delete Modal displays
+    const [deleteModalOpen, setDeleteModalOpen] = useState(false);
 
     //create a boolean hook to reloads/updates page every time it changed
     const [updated, setUpdated] = useState(false);
@@ -49,6 +53,10 @@ const ShowLocation = (props) => {
                 Edit Location
             </Button>
 
+            <Button variant="warning" onClick={() => setDeleteModalOpen(true)}>
+                Delete Location
+            </Button>
+
             <p>STREET: {location.street}</p>
             <p>CITY: {location.city} </p>
             <p>STATE: {location.state} </p>
@@ -61,6 +69,13 @@ const ShowLocation = (props) => {
                 msgAlert={msgAlert}
                 triggerRefresh={() => setUpdated((prev) => !prev)}
                 setModalOpen={() => setModalOpen((prev) => !prev)}
+            />
+            <DeleteLocationModal
+                user={user}
+                showModal={deleteModalOpen}
+                handleClose={() => setDeleteModalOpen(false)}
+                msgAlert={msgAlert}
+                location={location}
             />
         </>
         )

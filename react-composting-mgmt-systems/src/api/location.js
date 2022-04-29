@@ -46,3 +46,12 @@ export const edit = (user, location, id) => {
 		data: body
 	})
 }
+export const deleteLocation = (user, id) => {
+	return axios({
+		method: 'DELETE',
+		url: apiUrl + '/locations/' + id + '/',
+		headers: {
+			Authorization: `Token ${user.token}`,
+		},
+	})
+}

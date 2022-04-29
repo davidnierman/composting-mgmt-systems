@@ -11,7 +11,7 @@ const Input = (props) => {
         <Form.Label>{input}</Form.Label>
         <Form.Control
             placeholder={input}
-            value= {objectToCreateOrEdit[input]} // THIS IS THE LINE THAT PUTS THE INPUT "KEY" AND NOT THE VALUE
+            value= {objectToCreateOrEdit[input]}
             name={input}
             onChange={handleChange}
         />      

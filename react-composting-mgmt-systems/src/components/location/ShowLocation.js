@@ -1,16 +1,23 @@
 import React, { useState, useEffect } from 'react'
 import { show } from '../../api/location'
-import TableResponsive from '../shared/TableResponsive'
+import { Button } from 'react-bootstrap'
 import { useParams } from 'react-router-dom';
+import EditLocationModal from './EditLocationModal';
 
 const ShowLocation = (props) => {
     // pull the user from the props
-    const {user} = props;
+    const {user, msgAlert} = props;
     // pull the id from the url
     const { id } = useParams();
     
     // create a hook for the locations variable
     const [location, setLocation] = useState(null)
+
+    //create a hook to change if the create Modal displays
+    const [modalOpen, setModalOpen] = useState(false);
+
+    //create a boolean hook to reloads/updates page every time it changed
+    const [updated, setUpdated] = useState(false);
 
     useEffect(()=> {
         // use the axios call to pull location based on ID
@@ -23,7 +30,7 @@ const ShowLocation = (props) => {
         .catch((error) => {
             console.log("ERROR: ", error)
         })
-    },[])
+    },[updated])
 
     if (!location) {
         return <p>loading...</p>
@@ -38,11 +45,24 @@ const ShowLocation = (props) => {
     return (
         <>
             <h2>Location {location.id}</h2>
-            <p>{location.street}</p>
-            <p>{location.city} {location.state}, {location.zip_code}</p>
+            <Button variant="warning" onClick={() => setModalOpen(true)}>
+                Edit Location
+            </Button>
 
+            <p>STREET: {location.street}</p>
+            <p>CITY: {location.city} </p>
+            <p>STATE: {location.state} </p>
+            <p>ZIP_CODE{location.zip_code} </p>
+
+            <EditLocationModal
+                user={user}
+                showModal={modalOpen}
+                handleClose={() => setModalOpen(false)}
+                msgAlert={msgAlert}
+                triggerRefresh={() => setUpdated((prev) => !prev)}
+                setModalOpen={() => setModalOpen((prev) => !prev)}
+            />
         </>
-
         )
 }
 

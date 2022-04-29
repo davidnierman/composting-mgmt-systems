@@ -34,3 +34,15 @@ export const create = (user, location) => {
 		data: body
 	})
 }
+export const edit = (user, location, id) => {
+	const body = {"location": location}
+	console.log('this is the body: ', body)
+	return axios({
+		method: 'PATCH',
+		url: apiUrl + '/locations/' + id + '/',
+		headers: {
+			Authorization: `Token ${user.token}`,
+		},
+		data: body
+	})
+}

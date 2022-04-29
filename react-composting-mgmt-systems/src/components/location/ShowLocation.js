@@ -4,6 +4,7 @@ import { Button } from 'react-bootstrap'
 import { useParams } from 'react-router-dom';
 import EditLocationModal from './EditLocationModal';
 import DeleteLocationModal from './DeleteLocationModal'
+import IndexBinByLocation from '../bin/IndexBinsByLocation';
 
 const ShowLocation = (props) => {
     // pull the user from the props
@@ -56,11 +57,30 @@ const ShowLocation = (props) => {
             <Button variant="warning" onClick={() => setDeleteModalOpen(true)}>
                 Delete Location
             </Button>
-
-            <p>STREET: {location.street}</p>
-            <p>CITY: {location.city} </p>
-            <p>STATE: {location.state} </p>
-            <p>ZIP_CODE{location.zip_code} </p>
+            <h1>Location</h1>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">Street</th>
+                    <th scope="col">City</th>
+                    <th scope="col">State</th>
+                    <th scope="col">Zip_Code</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>{location.street} </td>
+                    <td>{location.city}</td>
+                    <td>{location.state}</td>
+                    <td>{location.zip_code}</td>
+                </tr>
+                </tbody>
+            </table>
+            <h1>Bins</h1>
+            <IndexBinByLocation
+                user={user}
+                locationId={id}
+            />
 
             <EditLocationModal
                 user={user}

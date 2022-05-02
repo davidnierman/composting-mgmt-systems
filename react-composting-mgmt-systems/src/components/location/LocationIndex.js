@@ -29,7 +29,23 @@ const LocationIndex = (props) => {
     if (!locations) {
         return <p>loading...</p>
     } else if (locations.length === 0) {
-        return <p>No locations yet, go add some</p>
+        return(
+            <>
+            <h2> No locations yet, go add some</h2>
+
+            <Button variant="warning" onClick={() => setModalOpen(true)}>
+                Create Location
+            </Button>
+
+            <CreateLocationModal 
+                user={user}
+                show={modalOpen}
+                handleClose={() => setModalOpen(false)}
+                msgAlert={msgAlert}
+                // triggerRefresh={triggerRefresh}
+            />
+            </>
+        ) 
     }
     
     // return the locations

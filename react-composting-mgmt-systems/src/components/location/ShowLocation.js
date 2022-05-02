@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { show } from '../../api/location'
-import { Button } from 'react-bootstrap'
+import { Button, ButtonGroup } from 'react-bootstrap'
 import { useParams } from 'react-router-dom';
 import EditLocationModal from './EditLocationModal';
 import DeleteLocationModal from './DeleteLocationModal'
@@ -50,13 +50,16 @@ const ShowLocation = (props) => {
     return (
         <>
             <h2>Location {location.id}</h2>
+            <ButtonGroup>
             <Button variant="warning" onClick={() => setModalOpen(true)}>
                 Edit Location
             </Button>
 
-            <Button variant="warning" onClick={() => setDeleteModalOpen(true)}>
+            <Button variant="danger" onClick={() => setDeleteModalOpen(true)}>
                 Delete Location
             </Button>
+            </ButtonGroup>
+
             <h1>Location</h1>
             <table class="table">
                 <thead>

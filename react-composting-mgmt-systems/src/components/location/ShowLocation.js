@@ -49,18 +49,20 @@ const ShowLocation = (props) => {
  
     return (
         <>
-            <h2>Location {location.id}</h2>
-            <ButtonGroup>
-            <Button variant="warning" onClick={() => setModalOpen(true)}>
-                Edit Location
-            </Button>
+            <br></br>
+            <div style={{textAlign:'center'}}>
+                <h2># {location.id}</h2>
+                <Button variant="outline-warning" size='sm' onClick={() => setModalOpen(true)}>
+                    Edit
+                </Button>
+                {'  '}
+                <Button variant="outline-danger" size='sm' onClick={() => setDeleteModalOpen(true)}>
+                    Delete 
+                </Button>
+            </div>
+            <br></br>
 
-            <Button variant="danger" onClick={() => setDeleteModalOpen(true)}>
-                Delete Location
-            </Button>
-            </ButtonGroup>
-
-            <h1>Location</h1>
+            <h2> Location: </h2>
             <table class="table">
                 <thead>
                 <tr>
@@ -79,7 +81,8 @@ const ShowLocation = (props) => {
                 </tr>
                 </tbody>
             </table>
-            <h1>Bins</h1>
+            <br></br>
+            <h2>Bins:</h2>
             <IndexBinByLocation
                 user={user}
                 locationId={id}

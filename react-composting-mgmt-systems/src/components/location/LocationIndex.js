@@ -3,6 +3,7 @@ import { index } from '../../api/location'
 import TableResponsive from '../shared/TableResponsive'
 import { Button } from 'react-bootstrap'
 import CreateLocationModal from './CreateLocationModal'
+import LocationTable from './LocationTable'
 
 const LocationIndex = (props) => {
     // pull the user from the props
@@ -60,8 +61,12 @@ const LocationIndex = (props) => {
                 Create Location
             </Button>
 
-            <TableResponsive
+            {/* <TableResponsive
                 arrayOfObjects={locations}
+            /> */}
+            
+            <LocationTable
+                locations={locations}
             />
 
             <CreateLocationModal 

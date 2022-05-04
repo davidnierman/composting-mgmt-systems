@@ -1,6 +1,7 @@
 import { indexBinByLocation } from "../../api/bin"
 import React, { useState, useEffect } from 'react'
 import TableResponsive from "../shared/TableResponsive"
+import BinTable from "./BinTable"
 
 
 const IndexBinByLocation = (props) => {
@@ -34,9 +35,12 @@ const IndexBinByLocation = (props) => {
 
     return(
 
-        <TableResponsive
-            arrayOfObjects={bins}
-        />
+        <>
+            {/* <TableResponsive
+            arrayOfObjects={bins} /> */}
+            <BinTable
+                bins={bins} />
+        </>
 
     )
 

@@ -43,7 +43,7 @@ const alwaysOptions = (
 
 const Header = ({ user }) => {
 	return (
-		<Navbar bg='success' variant='light' expand='md'>
+		<Navbar bg='success' variant='light' expand='lg' style={{height: "10vh",}}>
 			<Navbar.Brand>
 				<Link to='/' style={linkStyle}>
 					Composting Bin Mgmt

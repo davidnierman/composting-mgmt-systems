@@ -35,7 +35,7 @@ const LocationIndex = (props) => {
             <h2> No locations yet, go add some</h2>
 
             <Button variant="warning" onClick={() => setModalOpen(true)}>
-                Create Location
+                Add Location
             </Button>
 
             <CreateLocationModal 
@@ -58,7 +58,7 @@ const LocationIndex = (props) => {
             <h1>Locations</h1>
         
             <Button variant="warning" onClick={() => setModalOpen(true)}>
-                Create Location
+                Add Location
             </Button>
 
             {/* <TableResponsive

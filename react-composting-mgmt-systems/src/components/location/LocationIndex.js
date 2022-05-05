@@ -14,6 +14,16 @@ const LocationIndex = (props) => {
     //create a hook to change if the create Modal displays
     const [modalOpen, setModalOpen] = useState(false);
 
+    // create a special body for first time users without locations
+    const noLocationBody = {
+        color: "black",
+        // backgroundColor: "DodgerBlue",
+        height: "90vh",
+        fontFamily: "Arial",
+        backgroundColor: "antiquewhite",
+        textAlign: 'center'
+      };
+
     useEffect(()=> {
         // use the axios call to pull index info of all locations
         index(user)
@@ -31,21 +41,21 @@ const LocationIndex = (props) => {
         return <p>loading...</p>
     } else if (locations.length === 0) {
         return(
-            <>
-            <h2> No locations yet, go add some</h2>
+            <body style={noLocationBody}>
+                <br></br>
+                <h4> To get started, click on the button below!</h4>
+                <br></br>
+                <Button variant="warning" onClick={() => setModalOpen(true)}>
+                    Add my first location
+                </Button>
 
-            <Button variant="warning" onClick={() => setModalOpen(true)}>
-                Add Location
-            </Button>
-
-            <CreateLocationModal 
-                user={user}
-                show={modalOpen}
-                handleClose={() => setModalOpen(false)}
-                msgAlert={msgAlert}
-                // triggerRefresh={triggerRefresh}
-            />
-            </>
+                <CreateLocationModal 
+                    user={user}
+                    show={modalOpen}
+                    handleClose={() => setModalOpen(false)}
+                    msgAlert={msgAlert}
+                />
+            </body>
         ) 
     }
     

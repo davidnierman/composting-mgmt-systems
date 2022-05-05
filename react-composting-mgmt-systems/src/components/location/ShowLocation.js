@@ -56,17 +56,17 @@ const ShowLocation = (props) => {
             <br></br>
             <div style={{textAlign:'center'}}>
                 <h2># {location.id}</h2>
-                <Button variant="outline-warning" size='sm' onClick={() => setModalOpen(true)}>
+            </div>
+            <h2> Location:
+                {'  '}
+                <Button variant="warning" size='sm' onClick={() => setModalOpen(true)}>
                     Edit
                 </Button>
                 {'  '}
-                <Button variant="outline-danger" size='sm' onClick={() => setDeleteModalOpen(true)}>
+                <Button variant="danger" size='sm' onClick={() => setDeleteModalOpen(true)}>
                     Delete 
                 </Button>
-            </div>
-            <br></br>
-
-            <h2> Location: </h2>
+            </h2>
             <table class="table">
                 <thead>
                 <tr>
@@ -86,10 +86,13 @@ const ShowLocation = (props) => {
                 </tbody>
             </table>
             <br></br>
-            <h2>Bins:</h2>
-            <Button variant="outline-success" size='sm' onClick={() => setOrderModalOpen(true)}>
-                    Order a Bin 
-                </Button>
+                <h2>Bins: {'  '}
+                    <Button variant="success" size='sm' onClick={() => setOrderModalOpen(true)}>
+                        Order a Bin 
+                    </Button>
+                </h2>
+
+
             <IndexBinByLocation
                 user={user}
                 locationId={id}

@@ -59,9 +59,9 @@ const DeleteLocationModal = (props) => {
           </Modal.Body>
           <Modal.Footer>
           <ButtonGroup>
-                        <Button variant='danger' onClick={onDelete}>
-                            Delete
-                        </Button>
+            <Button variant='danger' onClick={onDelete}>
+                Delete
+            </Button>
           </ButtonGroup>
           </Modal.Footer>
         </Modal>

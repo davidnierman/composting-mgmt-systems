@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import { show } from '../../api/location'
-import { Button, ButtonGroup } from 'react-bootstrap'
+import { Button } from 'react-bootstrap'
 import { useParams } from 'react-router-dom';
 import EditLocationModal from './EditLocationModal';
 import DeleteLocationModal from './DeleteLocationModal'
 import IndexBinByLocation from '../bin/IndexBinsByLocation';
+import OrderModal from '../order/OrderModal';
 
 const ShowLocation = (props) => {
     // pull the user from the props
@@ -20,6 +21,9 @@ const ShowLocation = (props) => {
 
     // create a hook to change if the Delete Modal displays
     const [deleteModalOpen, setDeleteModalOpen] = useState(false);
+
+    // create a hook to change if the Delete Modal displays
+    const [OrderModalOpen, setOrderModalOpen] = useState(false);
 
     //create a boolean hook to reloads/updates page every time it changed
     const [updated, setUpdated] = useState(false);
@@ -83,6 +87,9 @@ const ShowLocation = (props) => {
             </table>
             <br></br>
             <h2>Bins:</h2>
+            <Button variant="outline-success" size='sm' onClick={() => setOrderModalOpen(true)}>
+                    Order a Bin 
+                </Button>
             <IndexBinByLocation
                 user={user}
                 locationId={id}
@@ -96,12 +103,22 @@ const ShowLocation = (props) => {
                 triggerRefresh={() => setUpdated((prev) => !prev)}
                 setModalOpen={() => setModalOpen((prev) => !prev)}
             />
+
             <DeleteLocationModal
                 user={user}
                 showModal={deleteModalOpen}
                 handleClose={() => setDeleteModalOpen(false)}
                 msgAlert={msgAlert}
                 location={location}
+            />
+
+            <OrderModal
+                user={user}
+                showModal={OrderModalOpen}
+                handleClose={() => setOrderModalOpen(false)}
+                msgAlert={msgAlert}
+                triggerRefresh={() => setUpdated((prev) => !prev)}
+                setModalOpen={() => setOrderModalOpen((prev) => !prev)}
             />
         </>
         )
